@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Login Page{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <h1 style="text-align: center;font-size: 4rem;">Welcome to Tech Blogs</h1>
+            <form method="post">
+                {% csrf_token %}
+                <center>
+                    {% for i in form %}
+                        {{ i.label_tag }} {{ i }} {{ i.errors|striptags }}<br>
+                    {% endfor %}
+                    {% if form.errors %}
+                        <p style="color: red;">Incorrect username or password. Please try again.</p>
+                    {% endif %}
+                    <br><br><br>
+                    <input type="submit" class="button" value="Login">
+                    <div class="signup">
+                        <span class="signup">Don't have an account?
+                            <a href="{% url 'home' %}"><label for="check">Signup</label></a>
+                        </span>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

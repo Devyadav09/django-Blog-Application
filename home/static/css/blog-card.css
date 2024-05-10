@@ -1,0 +1,103 @@
+body{
+    background:white;
+  }
+  
+  h1{
+    font-size:32px;
+    margin-top:30px;
+    font-family: 'Oswald', sans-serif;  
+    text-align:center;
+  }
+  .blog-wrapper{
+    padding:15px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+    .blog-card{
+      max-width:400px;
+      margin: 25px;
+      background:white;
+      border-radius: 10px;
+      box-shadow: 0 10px 41px 0 rgba(0,0,0,.5);
+      text-align:center;
+      cursor:pointer;
+      &:hover{
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+        .card-img{
+          img{
+            opacity:0.8;
+          }
+        }
+      }
+      .card-img{
+        position:relative;
+        text-align:center;
+        background:#f3eaeb;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        img{
+      
+          max-height:180px;
+          width:100%;
+          border-bottom:4px solid #f3dee2;
+        }
+        &:before{
+          content:'';
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          margin-left: -10px;
+          width: 0;
+          height: 0;
+          border-top: solid 10px #eedade;
+          border-left: solid 10px transparent;
+          border-right: solid 10px transparent;
+        }
+        h1{
+          position:relative;
+          margin:0;
+          font-size:30px;
+          bottom: 8px;
+          width:100%;
+          color:black;
+          font-family: 'Slabo 27px', serif;
+        }
+      }
+      .card-details{
+        margin-top:30px;
+        margin-bottom: 30px;
+        font-family: 'Roboto', sans-serif;
+        color:#3C3C3C;
+        span{   
+          padding:0 30px;
+          i{
+            margin-right:5px;
+          }
+          
+        }
+      }
+      .card-text{
+        padding:30px 15px;
+        font-family: 'Roboto', sans-serif;
+        line-height:22px;
+      }
+      .slug{
+        
+        display:inline-block;
+        width:auto;
+        text-align:center;
+        text-transform:uppercase;
+        background:#feeff6;
+        border-radius: 10px;
+        color:#fff;
+        padding:15px;
+        margin-bottom:30px;
+        font-family: 'Oswald', sans-serif;
+        &:hover{
+          background: darken(#f7dee3,20%);
+        }
+      }
+    }
+  }
