@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Signup Page{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <center>
+        {% for field in form %}
+            {{ field }} <!-- No need to use label_tag here -->
+            {{ field.errors|striptags }}
+        {% endfor %}
+        <br><br><br><br>
+        <input type="submit" class="button" value="Signup">
+        <div class="signup">
+            <span class="signup">Already have an account?
+                <a href="{% url 'user_login' %}"><label for="check">Signin</label></a>
+            </span>
+        </div>
+    </center>
+</form>
+{% endblock %}

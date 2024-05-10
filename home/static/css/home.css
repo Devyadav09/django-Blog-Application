@@ -1,0 +1,79 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../Images/backg.png); 
+    background-size: cover;
+    z-index: -1;
+    
+    
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+form {
+    height: 542px;
+    width: 450px;
+    position: absolute;
+    transform: translate(46%, -46%);
+    top: 59%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+
+
+form input.button:hover {
+    background: rgb(68, 127, 138);
+}
+
+label {
+    display: block;
+    margin-top: 0px;
+    font-size: 16px;  
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 36px;
+    width: 40%;
+    background-color:white;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 300;
+    
+}
+
+
+

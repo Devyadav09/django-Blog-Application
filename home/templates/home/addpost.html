@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <h1 style="font-family:Cursive;">Welcome To Tech Blogs {{ user }} Explore Yours Thoughts</h1>
+   
+    <form method="post" class="mt-5 pt-5 mb-5 pb-5" enctype="multipart/form-data">
+        {% csrf_token %}
+                
+                {{form.media}}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary mt-4">Create Blog</button>
+    </form>
+    <script>
+        var csrfToken = '{{csrf_token}}'
+    </script>
+</body>
+</html>

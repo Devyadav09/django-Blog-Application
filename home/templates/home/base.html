@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'user_login' %}">Login</a></li>
+            <li><a href="{% url 'menu' %}">BLOGS</a></li>
+            <li><form method="post" action="{% url 'user_logout' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form></li>
+            <li><form method="post" action="{% url 'addpost' %}">
+                {% csrf_token %}
+                <button type="submit">Add Blogs</button>
+            </form></li>
+            <li><form method="post" action="{% url 'mypost' %}">
+                {% csrf_token %}
+                <button type="submit">My Blogs</button>
+            </form></li>
+            
+        </ul>
+    </nav>
+    
+    
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

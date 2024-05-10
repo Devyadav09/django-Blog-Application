@@ -1,0 +1,33 @@
+.navbar ul {
+    list-style-type: none;
+    margin: -8px;
+    padding: 0;
+    background-color:whitesmoke;
+    overflow: hidden;
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a,
+.navbar ul li button {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover ,
+.navbar ul li button:hover{
+    background-color: #ddd;
+}
+
+.welcome-name {
+    display: inline-block;
+    text-align: center;
+}
+
